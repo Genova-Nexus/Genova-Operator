@@ -1,6 +1,10 @@
 MIT License
 
+<<<<<<< HEAD
 Copyright (c) 2026 Genova Nexus
+=======
+Copyright (c) 2026 Genova Nexus Team
+>>>>>>> 54d9195 (feat: Day 1 - Project Foundation and Core Setup)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

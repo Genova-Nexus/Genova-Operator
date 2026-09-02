@@ -1,0 +1,690 @@
+# Genova Operator — 60-Day Execution Plan
+
+**Project:** Genova Operator
+**Duration:** 60 Days
+**Approach:** Execution only
+**Primary purpose:** Operational and automation layer for Genova Nexus
+**Initial integrations:** GeneFusionAI, Clarify
+**Release target:** Genova Operator v0.1.0
+
+---
+
+## Phase 1 — Foundation and Core Architecture
+
+### Day 1 — Project Foundation
+
+**Library Component:** `Genova Operator Core`
+
+Set up the complete Genova Operator repository and establish the project as an independent open-source Python library. Define the package identity, repository structure, development environment, licensing, versioning strategy, documentation structure and testing structure. Establish the initial project workspace where all future components will be developed. Confirm the intended relationship between Genova Operator and Genova Nexus before feature development begins.
+
+**Output:** Genova Operator development foundation.
+
+---
+
+### Day 2 — Core Architecture
+
+**Library Component:** `Operator Core`
+
+Establish the central architecture of Genova Operator. Define the main internal components and how they communicate with one another. The core should provide the central control point through which project management, task execution, monitoring, automation, pipelines, experiments and ML operations will eventually be accessed. Keep the core lightweight and prevent it from containing project-specific logic.
+
+**Output:** Functional Operator core architecture.
+
+---
+
+### Day 3 — Configuration Manager
+
+**Library Component:** `Operator Config`
+
+Build the configuration layer responsible for defining the Genova workspace, registered projects, environments, execution preferences, monitoring settings and automation settings. Establish configuration validation and default behaviour. The configuration system should allow GeneFusionAI and Clarify to have independent settings while remaining controlled through the same Operator.
+
+**Output:** Working configuration system.
+
+---
+
+### Day 4 — Workspace Manager
+
+**Library Component:** `Workspace Manager`
+
+Create the workspace management layer responsible for identifying the environment in which Genova Operator operates. Establish workspace locations, project locations and workspace-level information. Ensure the Operator can understand the boundaries of the Genova development environment.
+
+**Output:** Genova workspace management.
+
+---
+
+### Day 5 — Project Registry
+
+**Library Component:** `Project Registry`
+
+Create the central registry for Genova projects. Define project identity, location, project type, repository information, environment information and operational configuration. The registry should become the source of truth for projects managed by Genova Operator.
+
+**Output:** Functional project registry.
+
+---
+
+### Day 6 — Project Discovery
+
+**Library Component:** `Project Discovery`
+
+Build automatic project discovery. Allow the Operator to identify potential Genova projects within configured workspaces. Establish detection rules for repositories, Python projects, project configuration and recognised project structures. Discovered projects should be distinguishable from ordinary directories.
+
+**Output:** Project discovery system.
+
+---
+
+### Day 7 — Foundation Validation
+
+**Library Component:** `Core Diagnostics`
+
+Validate the entire foundation created during the first six days. Confirm that configuration, workspace management, project registration and project discovery work together. Test the system against GeneFusionAI and Clarify and resolve architectural problems before moving into operational development.
+
+**Output:** Stable Genova Operator foundation.
+
+---
+
+# Phase 2 — Project Operations
+
+### Day 8 — Project Inspector
+
+**Library Component:** `Project Inspector`
+
+Build the project inspection system. The Inspector should provide structured information about a registered project including its directory structure, configuration, dependencies, repository information, runtime environment and recognised entry points.
+
+**Output:** Project inspection capability.
+
+---
+
+### Day 9 — Project Health
+
+**Library Component:** `Project Health`
+
+Create project health assessment. Check whether projects exist, whether their configuration is valid, whether required environments are available, whether dependencies are accessible and whether important project components are present.
+
+**Output:** Project health system.
+
+---
+
+### Day 10 — Project State
+
+**Library Component:** `Project State`
+
+Establish a standard state model for projects. Track whether projects are available, active, inactive, running, unhealthy or unavailable. Connect project state with running tasks and operational events.
+
+**Output:** Project state management.
+
+---
+
+### Day 11 — Project Activity
+
+**Library Component:** `Project Activity`
+
+Create project activity tracking. Record recent executions, failures, changes, running processes and completed tasks. Establish a project-level activity view that Genova Nexus can later consume.
+
+**Output:** Project activity tracking.
+
+---
+
+### Day 12 — Project Metadata
+
+**Library Component:** `Project Metadata`
+
+Expand the project information model to contain operational metadata such as project purpose, environment, primary technologies, entry points and supported operations. Keep metadata configurable rather than embedding assumptions into the core.
+
+**Output:** Standardised project metadata.
+
+---
+
+### Day 13 — Project Operations Manager
+
+**Library Component:** `Project Operations`
+
+Create a unified project operations layer connecting discovery, inspection, health, state and activity. The objective is to make project-level information accessible through one consistent operational interface.
+
+**Output:** Unified project management layer.
+
+---
+
+### Day 14 — Genova Project Validation
+
+**Library Components:** `GeneFusionAI Adapter` + `Clarify Adapter`
+
+Validate project operations using GeneFusionAI and Clarify. Ensure both projects can be discovered, registered, inspected and monitored through the same project-management architecture. Resolve differences through configuration or adapters rather than changing the core.
+
+**Output:** GeneFusionAI and Clarify supported by the project layer.
+
+---
+
+# Phase 3 — Execution Engine
+
+### Day 15 — Execution Manager
+
+**Library Component:** `Execution Manager`
+
+Establish the execution subsystem responsible for running approved operations inside registered projects. Define execution lifecycle, working directory management, environment selection, output handling and failure behaviour.
+
+**Output:** Execution architecture.
+
+---
+
+### Day 16 — Command Runner
+
+**Library Component:** `Command Runner`
+
+Build the command execution capability. Support project-level commands and capture execution information including output, errors, duration, exit status and task state.
+
+**Output:** Functional command execution.
+
+---
+
+### Day 17 — Process Manager
+
+**Library Component:** `Process Manager`
+
+Create process management for running operations. Track active processes and associate each process with its project and task. Establish controlled process termination.
+
+**Output:** Process lifecycle management.
+
+---
+
+### Day 18 — Background Runner
+
+**Library Component:** `Background Runner`
+
+Add support for operations that continue running after the initial request has been submitted. Ensure long-running tasks can operate independently while their status remains accessible.
+
+**Output:** Background execution.
+
+---
+
+### Day 19 — Environment Manager
+
+**Library Component:** `Environment Manager`
+
+Connect execution with project environments. Identify the correct runtime, interpreter and dependency environment required by each project before an operation begins.
+
+**Output:** Environment-aware execution.
+
+---
+
+### Day 20 — Execution Control
+
+**Library Component:** `Execution Control`
+
+Add execution controls such as cancellation, timeout handling and controlled termination. Establish predictable behaviour when operations exceed their allowed runtime or are manually stopped.
+
+**Output:** Controlled execution system.
+
+---
+
+### Day 21 — Execution Validation
+
+**Library Component:** `Execution Diagnostics`
+
+Test the complete execution system against real GeneFusionAI and Clarify workloads. Validate successful operations, failed operations, long-running processes, cancelled tasks, missing dependencies and incorrect environments.
+
+**Output:** Stable execution engine.
+
+---
+
+# Phase 4 — Monitoring and Observability
+
+### Day 22 — Monitoring Manager
+
+**Library Component:** `Monitoring Manager`
+
+Establish the central monitoring architecture. Define how Genova Operator will monitor processes, resources, tasks, projects and system events.
+
+**Output:** Monitoring foundation.
+
+---
+
+### Day 23 — Process Monitor
+
+**Library Component:** `Process Monitor`
+
+Implement monitoring for active processes. Track process state, runtime, completion and failure and connect the information to individual tasks.
+
+**Output:** Process monitoring.
+
+---
+
+### Day 24 — Resource Monitor
+
+**Library Component:** `Resource Monitor`
+
+Add system resource monitoring covering CPU, memory, storage and other relevant system information. Establish resource warning conditions.
+
+**Output:** System resource monitoring.
+
+---
+
+### Day 25 — GPU Monitor
+
+**Library Component:** `GPU Monitor`
+
+Add GPU awareness for ML workloads. Track available GPU resources, utilisation and memory when supported. Ensure systems without GPUs remain fully functional.
+
+**Output:** GPU monitoring.
+
+---
+
+### Day 26 — Log Manager
+
+**Library Component:** `Log Manager`
+
+Build centralised logging for Operator tasks. Capture execution output, errors, events and timestamps while maintaining a clear relationship between logs and individual tasks.
+
+**Output:** Centralised task logging.
+
+---
+
+### Day 27 — Event Manager
+
+**Library Component:** `Event Manager`
+
+Create the event system for important operational events such as task creation, execution, completion, failure, cancellation, timeout and resource warnings.
+
+**Output:** Operational event system.
+
+---
+
+### Day 28 — Observability Validation
+
+**Library Component:** `Operator Diagnostics`
+
+Run resource-intensive and long-running GeneFusionAI and Clarify workloads. Verify that processes, resources, logs and events can be observed correctly.
+
+**Output:** Complete monitoring layer.
+
+---
+
+# Phase 5 — Git and Development Awareness
+
+### Day 29 — Git Manager
+
+**Library Component:** `Git Manager`
+
+Introduce Git awareness for registered projects. Track repository status, active branch and current revision.
+
+**Output:** Git repository integration.
+
+---
+
+### Day 30 — Change Detector
+
+**Library Component:** `Change Detector`
+
+Detect project changes including modified, added and untracked files. Make these changes accessible to the project and task systems.
+
+**Output:** Project change detection.
+
+---
+
+### Day 31 — Commit Tracker
+
+**Library Component:** `Commit Tracker`
+
+Track recent project commits and connect execution activity with the relevant project revision.
+
+**Output:** Commit-aware execution.
+
+---
+
+### Day 32 — Project Snapshot
+
+**Library Component:** `Project Snapshot`
+
+Create snapshots containing project state, Git revision, environment information, configuration and execution context.
+
+**Output:** Project state snapshots.
+
+---
+
+### Day 33 — Development Monitor
+
+**Library Component:** `Development Monitor`
+
+Combine Git state, project changes, recent activity and execution history into a unified development status.
+
+**Output:** Development awareness layer.
+
+---
+
+# Phase 6 — Automation
+
+### Day 34 — Automation Manager
+
+**Library Component:** `Automation Manager`
+
+Establish the automation architecture. Define jobs, schedules, triggers, conditions, execution history and recovery behaviour.
+
+**Output:** Automation foundation.
+
+---
+
+### Day 35 — Job Manager
+
+**Library Component:** `Job Manager`
+
+Create the job lifecycle. Support job creation, activation, deactivation, modification, execution and history.
+
+**Output:** Functional job system.
+
+---
+
+### Day 36 — Scheduler
+
+**Library Component:** `Scheduler`
+
+Implement scheduled operations including one-time, recurring and interval-based jobs.
+
+**Output:** Scheduling system.
+
+---
+
+### Day 37 — Trigger Manager
+
+**Library Component:** `Trigger Manager`
+
+Create event-driven triggers that can start operations when defined project or task events occur.
+
+**Output:** Event-driven automation.
+
+---
+
+### Day 38 — Retry Manager
+
+**Library Component:** `Retry Manager`
+
+Add configurable retry and recovery behaviour for recoverable failures. Connect retries with task history and automation history.
+
+**Output:** Automated recovery.
+
+---
+
+### Day 39 — Automation History
+
+**Library Component:** `Automation History`
+
+Create a persistent history of automated executions. Track successful, failed, cancelled and skipped executions.
+
+**Output:** Automation history.
+
+---
+
+### Day 40 — Automation Validation
+
+**Library Component:** `Automation Diagnostics`
+
+Test scheduled and event-driven operations against Genova projects. Verify that jobs execute correctly and do not create uncontrolled duplicate processes.
+
+**Output:** Stable automation subsystem.
+
+---
+
+# Phase 7 — Pipelines and Research Operations
+
+### Day 41 — Pipeline Manager
+
+**Library Component:** `Pipeline Manager`
+
+Establish the pipeline architecture for multi-stage workflows. Define stages, dependencies, conditions and pipeline state.
+
+**Output:** Pipeline foundation.
+
+---
+
+### Day 42 — Pipeline Runner
+
+**Library Component:** `Pipeline Runner`
+
+Implement execution of multi-stage workflows and connect pipeline stages to the existing task system.
+
+**Output:** Functional pipeline execution.
+
+---
+
+### Day 43 — Dependency Manager
+
+**Library Component:** `Dependency Manager`
+
+Introduce stage dependency management. Ensure downstream stages only execute when their required conditions have been satisfied.
+
+**Output:** Dependency-aware pipelines.
+
+---
+
+### Day 44 — Parallel Executor
+
+**Library Component:** `Parallel Executor`
+
+Support independent pipeline stages running concurrently where appropriate. Connect parallel execution with resource monitoring and task management.
+
+**Output:** Parallel workflow execution.
+
+---
+
+### Day 45 — Experiment Manager
+
+**Library Component:** `Experiment Manager`
+
+Create a generic research experiment model. Track experiment identity, project, configuration, dataset information, environment and execution state.
+
+**Output:** Experiment management layer.
+
+---
+
+### Day 46 — Experiment Tracker
+
+**Library Component:** `Experiment Tracker`
+
+Track individual experiment runs, configurations, metrics, outputs, execution information and project revisions.
+
+**Output:** Experiment tracking.
+
+---
+
+### Day 47 — Experiment Comparator
+
+**Library Component:** `Experiment Comparator`
+
+Create comparison capabilities for multiple experiment runs. Allow results to be compared according to selected metrics, configurations and execution information.
+
+**Output:** Experiment comparison system.
+
+---
+
+# Phase 8 — ML and AutoML Operations
+
+### Day 48 — ML Operations Manager
+
+**Library Component:** `ML Operations`
+
+Establish the ML operations layer without turning Genova Operator into a replacement for existing ML frameworks. Define how training, evaluation, dataset validation and experiment operations will be managed.
+
+**Output:** ML operations foundation.
+
+---
+
+### Day 49 — Training Manager
+
+**Library Component:** `Training Manager`
+
+Connect model training workflows to the existing task, monitoring, logging and experiment systems. Ensure training jobs can be managed like any other Operator operation.
+
+**Output:** Managed ML training.
+
+---
+
+### Day 50 — ML Validator
+
+**Library Component:** `ML Validator`
+
+Create pre-execution validation for datasets, model configuration, required resources and training settings. Prevent invalid jobs from starting when critical requirements are missing.
+
+**Output:** ML preflight system.
+
+---
+
+### Day 51 — AutoML Manager
+
+**Library Component:** `AutoML Manager`
+
+Create the first AutoML orchestration layer. Support multiple configurations or candidate models and manage their execution as independent experiment tasks.
+
+**Output:** Initial AutoML orchestration.
+
+---
+
+### Day 52 — Model Evaluator
+
+**Library Component:** `Model Evaluator`
+
+Collect and compare evaluation results from multiple runs. Establish configurable selection criteria for identifying the preferred result.
+
+**Output:** ML result evaluation and selection.
+
+---
+
+# Phase 9 — Genova Nexus Integration
+
+### Day 53 — Nexus Bridge
+
+**Library Component:** `Nexus Bridge`
+
+Create the formal integration boundary between Genova Nexus and Genova Operator. Establish how Nexus submits operational requests and how Operator returns task information and results.
+
+**Output:** Nexus integration layer.
+
+---
+
+### Day 54 — Capability Registry
+
+**Library Component:** `Capability Registry`
+
+Create a registry describing everything Genova Operator can perform. Capabilities should cover project operations, execution, monitoring, automation, pipelines, experiments and ML operations.
+
+**Output:** Operator capability system.
+
+---
+
+### Day 55 — Task Gateway
+
+**Library Component:** `Task Gateway`
+
+Create the operational gateway through which Genova Nexus can submit structured tasks. Ensure requests contain the necessary project, action, parameters and constraints.
+
+**Output:** Nexus task submission system.
+
+---
+
+### Day 56 — Result Gateway
+
+**Library Component:** `Result Gateway`
+
+Create the standard mechanism through which Genova Operator returns execution status, results, metrics, logs, errors and relevant project information to Genova Nexus.
+
+**Output:** Nexus result system.
+
+---
+
+# Phase 10 — Production Validation and Release
+
+### Day 57 — Reliability Manager
+
+**Library Component:** `Reliability Manager`
+
+Perform a full reliability pass across the library. Test failed projects, invalid configurations, unavailable environments, missing dependencies, failed processes, timeouts, cancellations, automation failures, pipeline failures and ML failures.
+
+**Output:** Critical reliability issues resolved.
+
+---
+
+### Day 58 — Security Manager
+
+**Library Component:** `Security Manager`
+
+Review command execution, filesystem access, project permissions, environment variables, automation privileges and sensitive information handling. Establish appropriate controls before public release.
+
+**Output:** Security and operational-control review.
+
+---
+
+### Day 59 — Documentation Manager
+
+**Library Component:** `Documentation System`
+
+Complete the public documentation for Genova Operator. Document installation, configuration, project registration, project inspection, execution, monitoring, automation, pipelines, experiments, ML operations and Genova Nexus integration. Prepare practical examples based on GeneFusionAI and Clarify.
+
+**Output:** Release-ready documentation.
+
+---
+
+### Day 60 — Release Manager
+
+**Library Component:** `Release Manager`
+
+Perform the final complete system validation and prepare Genova Operator v0.1.0 for release. Validate the full workflow from Genova Nexus through Genova Operator into GeneFusionAI or Clarify and back to Nexus. Verify package installation, documentation, tests, versioning and release metadata. Publish the first release and establish the roadmap for v0.2.
+
+**Output:** **Genova Operator v0.1.0 released.**
+
+---
+
+# Final Architecture After 60 Days
+
+The resulting Genova Operator should conceptually look like this:
+
+```text
+                    GENOVA NEXUS
+                         │
+                  Nexus Bridge
+                         │
+                  Task Gateway
+                         │
+                ┌────────▼────────┐
+                │ GENOVA OPERATOR │
+                └────────┬────────┘
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+        ▼                ▼                ▼
+ Project Operations   Execution       Monitoring
+        │                │                │
+        ▼                ▼                ▼
+ Project Registry    Process Manager   Log Manager
+ Project Discovery   Command Runner    Resource Monitor
+ Project Inspector   Environment       GPU Monitor
+ Project Health      Execution Control Event Manager
+        │
+        └────────────────┐
+                         ▼
+                  Automation Layer
+                         │
+              ┌──────────┼──────────┐
+              ▼          ▼          ▼
+           Scheduler  Triggers    Retry
+                         │
+                         ▼
+                    Pipeline Layer
+                         │
+                         ▼
+                  Research Operations
+                         │
+                ┌────────┴────────┐
+                ▼                 ▼
+          Experiment          ML Operations
+             Manager               │
+                │                  ▼
+                │             AutoML Manager
+                ▼                  │
+          Experiment Tracker       ▼
+          Experiment Compare  Model Evaluator
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │ GENOVA PROJECTS      │
+              ├──────────────────────┤
+              │ GeneFusionAI         │
+              │ Clarify              │
+              │ Future Projects      │
+              └──────────────────────┘
+```
