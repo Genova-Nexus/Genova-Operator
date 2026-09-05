@@ -5,6 +5,11 @@ plans into concrete software, experiment, and research operations.
 """
 
 from genova_operator.__version__ import __version__
+from genova_operator.config import (
+    ConfigManager,
+    OperatorConfig,
+    ProjectConfig,
+)
 from genova_operator.core import (
     EventBus,
     GenovaOperator,
@@ -18,6 +23,9 @@ from genova_operator.core import (
 __all__ = [
     "__version__",
     "GenovaOperator",
+    "ConfigManager",
+    "OperatorConfig",
+    "ProjectConfig",
     "EventBus",
     "TaskRequest",
     "TaskResult",

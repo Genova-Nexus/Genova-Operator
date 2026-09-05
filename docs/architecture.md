@@ -8,7 +8,7 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
 
 ---
 
-## Core Architecture (Day 2)
+## Core Architecture & Configuration (Days 1–3)
 
 ```text
                        ┌─────────────────────────┐
@@ -21,35 +21,27 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
                        └──────┬───────────┬──────┘
                               │           │
                      ┌────────┴───┐   ┌───┴─────────────┐
-                     │  EventBus  │   │  BaseComponent  │
-                     └────────────┘   └─────────────────┘
+                     │  EventBus  │   │  ConfigManager  │
+                     └────────────┘   └────────┬────────┘
+                                               │
+                                       ┌───────┴───────┐
+                                       ▼               ▼
+                                 GeneFusionAI       Clarify
+                                 ProjectConfig   ProjectConfig
 ```
 
-### Core Components & Classes
+### Core Subsystems
 
-1. **`GenovaOperator`** (`src/genova_operator/core/operator.py`):
-   - Central control instance and orchestrator.
-   - Manages component registration, lifecycle (`initialize()`, `shutdown()`), status monitoring, and task routing (`submit_task()`).
+1. **Orchestration Core** (`src/genova_operator/core/`):
+   - `GenovaOperator`: Central control entry point.
+   - `TaskRequest` & `TaskResult`: Standardized communication payloads.
+   - `EventBus`: Thread-safe pub/sub event dispatcher.
 
-2. **Data Contracts** (`src/genova_operator/core/types.py`):
-   - **`TaskRequest`**: Standard payload submitted from Genova Nexus (action, project name, parameters, options, metadata).
-   - **`TaskResult`**: Standard payload returned to Genova Nexus (task ID, status, exit code, stdout, stderr, metrics, duration).
-   - **`TaskState`**: Execution status enum (`PENDING`, `RUNNING`, `COMPLETED`, `FAILED`, `CANCELLED`, `TIMEOUT`).
-   - **`OperatorStatus`**: Operational state enum (`UNINITIALIZED`, `READY`, `BUSY`, `ERROR`, `SHUTDOWN`).
-   - **`OperatorEvent`**: Data structure for internal events.
-
-3. **`EventBus`** (`src/genova_operator/core/event_bus.py`):
-   - Thread-safe publish-subscribe event bus supporting topic filtering and global subscribers.
-   - Allows decoupled event monitoring by internal components and external observers.
-
-4. **Interfaces & Protocols** (`src/genova_operator/core/interfaces.py`):
-   - `BaseComponent`: Abstract lifecycle interface (`initialize()`, `shutdown()`, `get_status()`).
-   - `BaseTaskRunner`: Interface for task execution engines.
-   - `BaseProjectRegistry`: Interface for project discovery and lookup.
-
-5. **Exceptions** (`src/genova_operator/core/exceptions.py`):
-   - `GenovaOperatorError`: Base exception class.
-   - `ComponentInitializationError`, `TaskExecutionError`, `ProjectNotFoundError`, `ConfigurationError`, `ComponentNotFoundError`.
+2. **Configuration Subsystem (`Operator Config`)** (`src/genova_operator/config/`):
+   - `ConfigManager`: Sub-component implementing `BaseComponent`.
+   - Data models: `OperatorConfig`, `WorkspaceConfig`, `ExecutionConfig`, `MonitoringConfig`, `AutomationConfig`, `ProjectConfig`.
+   - Layered overrides (Defaults $\rightarrow$ File $\rightarrow$ Dict $\rightarrow$ Environment Variables).
+   - Independent project settings for `GeneFusionAI`, `Clarify`, and future additions.
 
 ---
 
