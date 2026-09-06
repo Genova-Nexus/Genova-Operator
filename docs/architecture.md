@@ -8,7 +8,7 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
 
 ---
 
-## Core Architecture & Configuration (Days 1–3)
+## Core Architecture, Config & Workspace (Days 1–4)
 
 ```text
                        ┌─────────────────────────┐
@@ -18,16 +18,18 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
                                     ▼
                        ┌─────────────────────────┐
                        │     GenovaOperator      │  (Central Orchestrator)
-                       └──────┬───────────┬──────┘
-                              │           │
-                     ┌────────┴───┐   ┌───┴─────────────┐
-                     │  EventBus  │   │  ConfigManager  │
-                     └────────────┘   └────────┬────────┘
-                                               │
-                                       ┌───────┴───────┐
-                                       ▼               ▼
-                                 GeneFusionAI       Clarify
-                                 ProjectConfig   ProjectConfig
+                       └─┬──────────┬──────────┬─┘
+                         │          │          │
+           ┌─────────────┴┐   ┌─────┴───────┐  └─────────────┐
+           │   EventBus   │   │ConfigManager│                │
+           └──────────────┘   └─────┬───────┘                ▼
+                                    │               ┌──────────────────┐
+                                    ▼               │ WorkspaceManager │
+                              ProjectConfigs        └────────┬─────────┘
+                                                             │
+                                                     ┌───────┴───────┐
+                                                     ▼               ▼
+                                               GeneFusionAI       Clarify
 ```
 
 ### Core Subsystems
@@ -40,8 +42,9 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
 2. **Configuration Subsystem (`Operator Config`)** (`src/genova_operator/config/`):
    - `ConfigManager`: Sub-component implementing `BaseComponent`.
    - Data models: `OperatorConfig`, `WorkspaceConfig`, `ExecutionConfig`, `MonitoringConfig`, `AutomationConfig`, `ProjectConfig`.
-   - Layered overrides (Defaults $\rightarrow$ File $\rightarrow$ Dict $\rightarrow$ Environment Variables).
-   - Independent project settings for `GeneFusionAI`, `Clarify`, and future additions.
+
+3. **Workspace Management Subsystem (`Workspace Manager`)** (`src/genova_operator/workspace/`):
+   - `WorkspaceManager`: Sub-component enforcing path boundaries, workspace health diagnostics, candidate project directory resolution, and marker management.
 
 ---
 
