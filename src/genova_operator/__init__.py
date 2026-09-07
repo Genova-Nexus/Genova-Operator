@@ -19,6 +19,13 @@ from genova_operator.core import (
     TaskResult,
     TaskState,
 )
+from genova_operator.registry import (
+    EnvironmentInfo,
+    ProjectIdentity,
+    ProjectRecord,
+    ProjectRegistry,
+    RepositoryInfo,
+)
 from genova_operator.workspace import (
     WorkspaceHealth,
     WorkspaceInfo,
@@ -36,6 +43,11 @@ __all__ = [
     "WorkspaceInfo",
     "WorkspaceHealth",
     "WorkspaceStatus",
+    "ProjectRegistry",
+    "ProjectRecord",
+    "ProjectIdentity",
+    "RepositoryInfo",
+    "EnvironmentInfo",
     "EventBus",
     "TaskRequest",
     "TaskResult",

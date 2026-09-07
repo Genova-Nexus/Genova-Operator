@@ -8,7 +8,7 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
 
 ---
 
-## Core Architecture, Config & Workspace (Days 1–4)
+## Core Architecture, Config, Workspace & Registry (Days 1–5)
 
 ```text
                        ┌─────────────────────────┐
@@ -27,9 +27,15 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
                                     ▼               │ WorkspaceManager │
                               ProjectConfigs        └────────┬─────────┘
                                                              │
+                                                             ▼
+                                                    ┌──────────────────┐
+                                                    │ ProjectRegistry  │ (Source of Truth)
+                                                    └────────┬─────────┘
+                                                             │
                                                      ┌───────┴───────┐
                                                      ▼               ▼
                                                GeneFusionAI       Clarify
+                                               ProjectRecord   ProjectRecord
 ```
 
 ### Core Subsystems
@@ -45,6 +51,9 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
 
 3. **Workspace Management Subsystem (`Workspace Manager`)** (`src/genova_operator/workspace/`):
    - `WorkspaceManager`: Sub-component enforcing path boundaries, workspace health diagnostics, candidate project directory resolution, and marker management.
+
+4. **Project Registry Subsystem (`Project Registry`)** (`src/genova_operator/registry/`):
+   - `ProjectRegistry`: Central source of truth component for project identity (`ProjectIdentity`), Git repository specs (`RepositoryInfo`), runtime environment specs (`EnvironmentInfo`), and comprehensive project records (`ProjectRecord`).
 
 ---
 
