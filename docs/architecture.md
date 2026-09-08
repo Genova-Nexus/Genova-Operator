@@ -8,7 +8,7 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
 
 ---
 
-## Core Architecture, Config, Workspace & Registry (Days 1–5)
+## Core Architecture, Config, Workspace, Registry & Discovery (Days 1–6)
 
 ```text
                        ┌─────────────────────────┐
@@ -27,6 +27,11 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
                                     ▼               │ WorkspaceManager │
                               ProjectConfigs        └────────┬─────────┘
                                                              │
+                                                             ▼
+                                                    ┌──────────────────┐
+                                                    │ ProjectDiscovery │ (Auto-Discovery)
+                                                    └────────┬─────────┘
+                                                             │ Auto-Registers
                                                              ▼
                                                     ┌──────────────────┐
                                                     │ ProjectRegistry  │ (Source of Truth)
@@ -54,6 +59,9 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
 
 4. **Project Registry Subsystem (`Project Registry`)** (`src/genova_operator/registry/`):
    - `ProjectRegistry`: Central source of truth component for project identity (`ProjectIdentity`), Git repository specs (`RepositoryInfo`), runtime environment specs (`EnvironmentInfo`), and comprehensive project records (`ProjectRecord`).
+
+5. **Project Discovery Subsystem (`Project Discovery`)** (`src/genova_operator/discovery/`):
+   - `ProjectDiscovery`: Automatic project detection component supporting rule-based evaluation (`rules.py`), confidence classification (`ProjectConfidence`), and auto-registration into `ProjectRegistry`.
 
 ---
 

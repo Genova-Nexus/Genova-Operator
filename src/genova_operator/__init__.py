@@ -19,6 +19,11 @@ from genova_operator.core import (
     TaskResult,
     TaskState,
 )
+from genova_operator.discovery import (
+    DiscoveredProject,
+    ProjectConfidence,
+    ProjectDiscovery,
+)
 from genova_operator.registry import (
     EnvironmentInfo,
     ProjectIdentity,
@@ -48,6 +53,9 @@ __all__ = [
     "ProjectIdentity",
     "RepositoryInfo",
     "EnvironmentInfo",
+    "ProjectDiscovery",
+    "DiscoveredProject",
+    "ProjectConfidence",
     "EventBus",
     "TaskRequest",
     "TaskResult",
