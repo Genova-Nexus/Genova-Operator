@@ -19,6 +19,12 @@ from genova_operator.core import (
     TaskResult,
     TaskState,
 )
+from genova_operator.diagnostics import (
+    CheckStatus,
+    CoreDiagnostics,
+    DiagnosticCheck,
+    DiagnosticReport,
+)
 from genova_operator.discovery import (
     DiscoveredProject,
     ProjectConfidence,
@@ -56,6 +62,10 @@ __all__ = [
     "ProjectDiscovery",
     "DiscoveredProject",
     "ProjectConfidence",
+    "CoreDiagnostics",
+    "DiagnosticReport",
+    "DiagnosticCheck",
+    "CheckStatus",
     "EventBus",
     "TaskRequest",
     "TaskResult",
