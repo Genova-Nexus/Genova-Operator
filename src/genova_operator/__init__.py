@@ -30,6 +30,10 @@ from genova_operator.discovery import (
     ProjectConfidence,
     ProjectDiscovery,
 )
+from genova_operator.inspector import (
+    ProjectInspectionReport,
+    ProjectInspector,
+)
 from genova_operator.registry import (
     EnvironmentInfo,
     ProjectIdentity,
@@ -66,6 +70,8 @@ __all__ = [
     "DiagnosticReport",
     "DiagnosticCheck",
     "CheckStatus",
+    "ProjectInspector",
+    "ProjectInspectionReport",
     "EventBus",
     "TaskRequest",
     "TaskResult",
