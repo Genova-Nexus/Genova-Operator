@@ -30,6 +30,11 @@ from genova_operator.discovery import (
     ProjectConfidence,
     ProjectDiscovery,
 )
+from genova_operator.health import (
+    HealthStatus,
+    ProjectHealthManager,
+    ProjectHealthReport,
+)
 from genova_operator.inspector import (
     ProjectInspectionReport,
     ProjectInspector,
@@ -72,6 +77,9 @@ __all__ = [
     "CheckStatus",
     "ProjectInspector",
     "ProjectInspectionReport",
+    "ProjectHealthManager",
+    "ProjectHealthReport",
+    "HealthStatus",
     "EventBus",
     "TaskRequest",
     "TaskResult",
