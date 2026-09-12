@@ -46,6 +46,12 @@ from genova_operator.registry import (
     ProjectRegistry,
     RepositoryInfo,
 )
+from genova_operator.state import (
+    ProjectState,
+    ProjectStateManager,
+    ProjectStateSummary,
+    StateTransitionRecord,
+)
 from genova_operator.workspace import (
     WorkspaceHealth,
     WorkspaceInfo,
@@ -80,6 +86,10 @@ __all__ = [
     "ProjectHealthManager",
     "ProjectHealthReport",
     "HealthStatus",
+    "ProjectStateManager",
+    "ProjectState",
+    "StateTransitionRecord",
+    "ProjectStateSummary",
     "EventBus",
     "TaskRequest",
     "TaskResult",
