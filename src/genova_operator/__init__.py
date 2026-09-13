@@ -5,6 +5,12 @@ plans into concrete software, experiment, and research operations.
 """
 
 from genova_operator.__version__ import __version__
+from genova_operator.activity import (
+    ActivityCategory,
+    ActivityEntry,
+    ProjectActivitySummary,
+    ProjectActivityTracker,
+)
 from genova_operator.config import (
     ConfigManager,
     OperatorConfig,
@@ -78,8 +84,8 @@ __all__ = [
     "DiscoveredProject",
     "ProjectConfidence",
     "CoreDiagnostics",
-    "DiagnosticReport",
     "DiagnosticCheck",
+    "DiagnosticReport",
     "CheckStatus",
     "ProjectInspector",
     "ProjectInspectionReport",
@@ -90,6 +96,10 @@ __all__ = [
     "ProjectState",
     "StateTransitionRecord",
     "ProjectStateSummary",
+    "ProjectActivityTracker",
+    "ActivityEntry",
+    "ActivityCategory",
+    "ProjectActivitySummary",
     "EventBus",
     "TaskRequest",
     "TaskResult",
