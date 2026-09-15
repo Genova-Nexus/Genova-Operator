@@ -49,6 +49,11 @@ from genova_operator.metadata import (
     ProjectMetadata,
     ProjectMetadataManager,
 )
+from genova_operator.operations import (
+    OperationResult,
+    ProjectOperationalView,
+    ProjectOperationsManager,
+)
 from genova_operator.registry import (
     EnvironmentInfo,
     ProjectIdentity,
@@ -95,6 +100,9 @@ __all__ = [
     "ProjectInspectionReport",
     "ProjectMetadataManager",
     "ProjectMetadata",
+    "ProjectOperationsManager",
+    "ProjectOperationalView",
+    "OperationResult",
     "ProjectHealthManager",
     "ProjectHealthReport",
     "HealthStatus",

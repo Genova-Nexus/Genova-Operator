@@ -65,6 +65,7 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
    - `ProjectStateManager` (Day 10): Standard project state model (`AVAILABLE`, `ACTIVE`, `INACTIVE`, `RUNNING`, `UNHEALTHY`, `UNAVAILABLE`) linking active tasks, health updates, and state change event broadcasting (`StateTransitionRecord`).
    - `ProjectActivityTracker` (Day 11): Project activity tracking system recording executions, failures, file changes, running processes, and completed tasks, emitting events and summarizing feeds for Genova Nexus.
    - `ProjectMetadataManager` (Day 12): Project metadata management system handling standardized metadata models (`ProjectMetadata`), manifest auto-extraction (`genova_project.json`), supported operation querying, and technology auto-detection.
+   - `ProjectOperationsManager` (Day 13): Unified operational facade combining inspection, health, state, activity, and metadata into a single consolidated view (`ProjectOperationalView`) and standardized operational dispatcher (`OperationResult`).
 
 ---
 
@@ -77,7 +78,7 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
    - Day 10: Project State (`Project State`) ✅
    - Day 11: Project Activity (`Project Activity`) ✅
    - Day 12: Project Metadata (`Project Metadata`) ✅
-   - Day 13: Project Operations Manager (`Project Operations`)
+   - Day 13: Project Operations Manager (`Project Operations`) ✅
    - Day 14: Genova Project Validation (`GeneFusionAI Adapter` + `Clarify Adapter`)
 3. **Phase 3: Execution Engine** (Days 15–21)
 4. **Phase 4: Monitoring and Observability** (Days 22–28)
