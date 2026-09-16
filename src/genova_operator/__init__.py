@@ -11,6 +11,12 @@ from genova_operator.activity import (
     ProjectActivitySummary,
     ProjectActivityTracker,
 )
+from genova_operator.adapters import (
+    BaseProjectAdapter,
+    ClarifyAdapter,
+    GeneFusionAIAdapter,
+    ProjectAdapterRegistry,
+)
 from genova_operator.config import (
     ConfigManager,
     OperatorConfig,
@@ -103,6 +109,10 @@ __all__ = [
     "ProjectOperationsManager",
     "ProjectOperationalView",
     "OperationResult",
+    "ProjectAdapterRegistry",
+    "BaseProjectAdapter",
+    "GeneFusionAIAdapter",
+    "ClarifyAdapter",
     "ProjectHealthManager",
     "ProjectHealthReport",
     "HealthStatus",
