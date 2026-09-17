@@ -42,6 +42,12 @@ from genova_operator.discovery import (
     ProjectConfidence,
     ProjectDiscovery,
 )
+from genova_operator.execution import (
+    CommandExecutionEngine,
+    CommandRequest,
+    CommandResult,
+    ExecutionStatus,
+)
 from genova_operator.health import (
     HealthStatus,
     ProjectHealthManager,
@@ -102,6 +108,10 @@ __all__ = [
     "DiagnosticCheck",
     "DiagnosticReport",
     "CheckStatus",
+    "CommandExecutionEngine",
+    "CommandRequest",
+    "CommandResult",
+    "ExecutionStatus",
     "ProjectInspector",
     "ProjectInspectionReport",
     "ProjectMetadataManager",

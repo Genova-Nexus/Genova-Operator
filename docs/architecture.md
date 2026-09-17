@@ -68,6 +68,9 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
    - `ProjectOperationsManager` (Day 13): Unified operational facade combining inspection, health, state, activity, and metadata into a single consolidated view (`ProjectOperationalView`) and standardized operational dispatcher (`OperationResult`).
    - `ProjectAdapterRegistry` & Adapters (Day 14): Project domain adapter registry (`GeneFusionAIAdapter`, `ClarifyAdapter`, `BaseProjectAdapter`) providing specialized domain inspection, environment checking, and action dispatch for genomics ML and clinical imaging projects.
 
+3. **Phase 3 Execution Engine Components** (Days 15–21):
+   - `CommandExecutionEngine` (Day 15): Subprocess command execution engine managing command execution requests (`CommandRequest`), return code tracking, stdout/stderr capture, timeout controls, and boundary enforcement (`CommandResult`).
+
 ---
 
 ## 60-Day Architecture Roadmap
@@ -81,7 +84,14 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
    - Day 12: Project Metadata (`Project Metadata`) ✅
    - Day 13: Project Operations Manager (`Project Operations`) ✅
    - Day 14: Genova Project Validation (`GeneFusionAI Adapter` + `Clarify Adapter`) ✅
-3. **Phase 3: Execution Engine** (Days 15–21)
+3. **Phase 3: Execution Engine** (Days 15–21) — **IN PROGRESS**
+   - Day 15: Command Execution Engine (`Command Execution`) ✅
+   - Day 16: Task Runner & Subprocess Management (`Subprocess Runner`)
+   - Day 17: Python Environment Execution Engine (`Python Execution Engine`)
+   - Day 18: Operational Task Queue (`Task Queue`)
+   - Day 19: Asynchronous Task Execution (`Async Task Execution`)
+   - Day 20: Execution Result & Artifact Collector (`Artifact Collector`)
+   - Day 21: Execution Engine E2E Validation (`Execution Engine Validation`)
 4. **Phase 4: Monitoring and Observability** (Days 22–28)
 5. **Phase 5: Git and Development Awareness** (Days 29–33)
 6. **Phase 6: Automation** (Days 34–40)
