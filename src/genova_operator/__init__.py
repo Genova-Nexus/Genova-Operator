@@ -73,6 +73,11 @@ from genova_operator.registry import (
     ProjectRegistry,
     RepositoryInfo,
 )
+from genova_operator.runner import (
+    ProcessStatus,
+    SubprocessHandle,
+    SubprocessRunner,
+)
 from genova_operator.state import (
     ProjectState,
     ProjectStateManager,
@@ -112,6 +117,9 @@ __all__ = [
     "CommandRequest",
     "CommandResult",
     "ExecutionStatus",
+    "SubprocessRunner",
+    "SubprocessHandle",
+    "ProcessStatus",
     "ProjectInspector",
     "ProjectInspectionReport",
     "ProjectMetadataManager",

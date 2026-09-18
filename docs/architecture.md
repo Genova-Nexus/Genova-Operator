@@ -70,6 +70,7 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
 
 3. **Phase 3 Execution Engine Components** (Days 15–21):
    - `CommandExecutionEngine` (Day 15): Subprocess command execution engine managing command execution requests (`CommandRequest`), return code tracking, stdout/stderr capture, timeout controls, and boundary enforcement (`CommandResult`).
+   - `SubprocessRunner` (Day 16): Background task runner and subprocess manager tracking PID handles (`SubprocessHandle`), streaming log outputs, graceful process termination (`stop_process`), and project state coupling (`RUNNING`).
 
 ---
 
@@ -86,7 +87,7 @@ Genova Nexus serves as the high-level intelligent decision maker, while **Genova
    - Day 14: Genova Project Validation (`GeneFusionAI Adapter` + `Clarify Adapter`) ✅
 3. **Phase 3: Execution Engine** (Days 15–21) — **IN PROGRESS**
    - Day 15: Command Execution Engine (`Command Execution`) ✅
-   - Day 16: Task Runner & Subprocess Management (`Subprocess Runner`)
+   - Day 16: Task Runner & Subprocess Management (`Subprocess Runner`) ✅
    - Day 17: Python Environment Execution Engine (`Python Execution Engine`)
    - Day 18: Operational Task Queue (`Task Queue`)
    - Day 19: Asynchronous Task Execution (`Async Task Execution`)
